@@ -1,0 +1,14 @@
+{{- if .Values.pvc.cephfs.enable -}}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ .Values.app }}
+  labels: {}
+spec:
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: "{{ .Values.pvc.cephfs.storageClassName }}"
+  accessModes:
+    - ReadWriteMany
+{{- end -}}

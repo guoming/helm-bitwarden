@@ -1,0 +1,12 @@
+app: bitwarden
+gateway:
+  enable: false
+  host: vaultwarden.com
+pvc:
+  cephfs:
+    enable: false
+    storageClassName: cephfs
+  local:
+    enable: true
+    storageClassName: standard
+
